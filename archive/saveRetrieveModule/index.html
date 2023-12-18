@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SaveRetrieve Module</title>
+  </head>
+  <body>
+    <center>
+      <h1>Save Retrieve Module</h1>
+      <p>
+        This module stores text where you left off and allows you to continue
+        from where you left using MongoDB.
+      </p>
+      <br />
+      <span>
+        <p>UserID</p>
+        <textarea id="userId" cols="20" rows="1"></textarea>
+      </span>
+      <textarea id="textarea" cols="50" rows="10"></textarea>
+      <br />
+
+      <button id="btnRetrieve">Retrieve</button>
+      <button id="btnSave">Save</button>
+    </center>
+  </body>
+  <script>
+    const textarea = document.getElementById("textarea");
+    const userID = document.getElementById("userId");
+    const btnRetrieve = document.getElementById("btnRetrieve");
+    const btnSave = document.getElementById("btnSave");
+
+    // Unique id to identify
+
+    function getUid() {
+      var uid = userID.value;
+      return uid;
+    }
+
+    let saveTimeout; // Variable to store the timeout for saving
+
+    // On page load, read old data and paste it in the textarea
+    window.onload = (e) => {
+      e.preventDefault();
+      readFromDB(getUid());
+    };
+
+    // When user is done typing, save the data in the DB
+    textarea.addEventListener("keyup", (e) => {
+      e.preventDefault();
+
+      // Clear the previous timeout if it exists
+      clearTimeout(saveTimeout);
+
+      // Set a new timeout to save data after 1 second of inactivity
+      saveTimeout = setTimeout(() => {
+        saveToDB(getUid());
+      }, 1000);
+    });
+
+    // When user clicks "Save," save the data
+    btnSave.addEventListener("click", (e) => {
+      e.preventDefault();
+      saveToDB(getUid());
+    });
+
+    // When user clicks "Retrieve," retrieve data
+    btnRetrieve.addEventListener("click", (e) => {
+      e.preventDefault();
+      readFromDB(getUid());
+    });
+
+    // Function to save data
+    function saveToDB(uid) {
+      // Get the text from the textarea
+      const newData = JSON.stringify({ uid: uid, data: textarea.value.trim() });
+      console.log(newData);
+
+      // Send the text to the server to save it to the database
+      fetch("/codedb/saveToDB", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: newData,
+      })
+        .then((response) => {
+          if (response.ok) {
+            alert("Data saved to DB");
+          } else {
+            alert("Error saving data to DB");
+          }
+        })
+        .catch((error) => {
+          alert("Error: " + error.message);
+        });
+    }
+
+    // Function to get data from the server
+    async function readFromDB(uid) {
+      try {
+        // Define the request options
+        const requestOptions = {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ uid: uid }),
+        };
+
+        // Send a GET request to retrieve data from the server
+        const response = await fetch("/codedb/readFromDB", requestOptions);
+
+        // Log the response for debugging
+        console.log(response);
+
+        if (!response.ok) {
+          throw new Error("Error retrieving data from DB");
+        }
+
+        // Parse the response JSON
+        const responseData = await response.json();
+
+        // Log the parsed response data
+        console.log(responseData);
+
+        // Extract the "data" property from the response
+        const data = JSON.parse(responseData.data).data;
+
+        // Update the textarea with the retrieved data
+        textarea.value = data;
+
+        // Log the retrieved data and show an alert
+        console.log("Retrieved data:", data);
+        alert(data);
+      } catch (error) {
+        // Handle any errors and show an alert
+        alert("Error: " + error.message);
+      }
+    }
+  </script>
+</html>

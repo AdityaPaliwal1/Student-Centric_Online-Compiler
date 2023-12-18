@@ -1,0 +1,769 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&family=Tilt+Warp&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+
+}
+body{
+    box-sizing: border-box;
+    overflow-x: hidden;
+
+
+}
+::-webkit-scrollbar {
+    width: 10px; /* Adjust the width as needed */
+    background-color: #f0f0f0; /* Background color of the scrollbar track */
+  }
+  
+  /* Color of the scrollbar thumb */
+  ::-webkit-scrollbar-thumb {
+    background-color: #007bff; /* Blue color for the scrollbar thumb */
+    /* border-radius: 5px; */
+  }
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    /* background-color: grey; */
+    height: 60px;
+    position: relative;
+    width: 100vw;
+    box-shadow: 0 2px 5px -2px blue;
+    
+
+}
+.navitems{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 50%;
+    /* border: 1px solid red; */
+}
+.logo{
+ width:40%;
+ /* border: 1px solid green; */
+}
+.logo h3{
+    font-family:'Roboto Slab', serif;
+    font-weight: bold;
+    margin-left: 7px;
+    color: blue;
+    font-size: x-large;
+}
+.logo a{
+    text-decoration: none;
+    color: blue;
+    
+}
+.logo a:hover{
+    color:#1B2358;
+}
+.navitems a{
+    text-decoration: none;
+    padding: 10px 20px;
+    color: blue;
+    /* background-color: blue; */
+    font-size: larger;
+}
+
+
+.navitems a:hover{
+    /* background-color: rgb(236, 236, 236); */
+    color :#1B2358;
+}
+.navitems li{
+    list-style: none;
+    display: inline;
+    /* border: 1px solid red; */
+    /* padding: 5px 5px ; */
+    margin: 0px 6px 0px 6px ;
+    /* background-color: blue; */
+}
+.btn{
+    background-color: blue;
+    padding: 10px 30px;
+    border: 1px solid black;
+    position: absolute;
+    right: 0;
+    top: 2;
+    margin-right: 30px;
+    border-radius: 10px;
+    cursor: pointer;
+   
+    
+}
+.btn a{
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 17px;
+    font-weight: bold;
+    font-family: 'Roboto Slab', serif;
+
+}
+.btn:hover{
+    background-color: #1B2358;
+}
+
+
+
+
+h1, p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Style the main section */
+.main-section {
+    display: flex;
+    align-items :center;
+    padding: 20px;
+    height: 100vh;
+    /* border: 1px solid red; */
+    /* padding-bottom: 80px; */
+}
+
+/* Style the logo */
+.logo-section {
+    flex: 0 0 auto;
+    margin-right: 20px;
+    /* margin-left: 30px; */
+    /* border: 1px solid green; */
+    width: 30%;
+    padding-left: 50px;
+/* position: relative;
+    top: -5px; */
+    
+}
+
+.logo-section img {
+   
+    animation: slideUpDown 2s ease-in-out infinite alternate;
+    width: 450px;
+    
+    margin-right: 50%;
+}
+
+@keyframes slideUpDown {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-20px); /* Adjust the distance of the up and down motion */
+    }
+}
+
+/* Style the article section */
+.article {
+    flex: 1;
+    transition: background-color 0.3s;
+    padding: 30px;
+    padding-bottom: 50px;
+    padding-left: 120px;
+    background-color: #fff;
+    /* border: 1px solid #e0e0e0; */
+    border-radius: 5px;
+    width: 70px;
+    margin-left: 90px;
+    /* border: 1px solid red; */
+    margin-top: 20px;
+    box-sizing: border-box;
+
+}
+
+.article-title {
+    font-size: 30px;
+    margin-bottom: 10px;
+    transition: color 0.3s; /* Text transition on hover */
+    font-family:'Roboto Slab', serif;
+    color: #1B2358;
+}
+.article span{
+    color: blue;
+    font-size: 40px;
+    font-family:'Roboto Slab', serif;
+    font-weight: 900;
+    /* text-transform: uppercase; */
+}
+
+
+.article p{
+    font-family:'Roboto Slab', serif;
+}
+
+/* login section  */
+
+.login-section{
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    width: 100vw;
+}
+.login-logo{
+    flex: 0 0 auto;
+    margin-right: 100px;
+    /* margin-left: 30px; */
+    /* border: 1px solid green; */
+    width: 30%;
+    padding-left: 50px;
+position: relative;
+    top: -2px;
+    margin-top: 30px;
+    margin-left: 60px;
+}
+.login-logo img{
+    width: 500px; /* Adjust as needed */
+    height: auto;
+    display: block;
+   
+}
+
+
+/* .login-container{
+    width: 50%;
+    margin-left: 100px;
+    border: 1px solid red;
+} */
+/* 
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+} */
+
+.login-container {
+    /* background-color: #fff; */
+ 
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    padding: 80px;
+    width: 300px;
+    text-align: center;
+    margin-left: 240px;
+    border: 1px solid blue;
+    z-index: 1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.login-container .title {
+    margin-bottom: 20px;
+    color: blue;
+    font-size: 60px;
+}
+
+.login-container input[type="text"],
+.login-container input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    font-size: 16px;
+}
+
+.login-container input[type="submit"] {
+    width: 50%;
+    background : none;
+    color: blue;
+    border: none;
+    padding: 10px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    border: 1px solid #ccc;
+}
+
+.login-container input[type="submit"]:hover {
+    background-color: blue;
+    color: white;
+}
+
+.login-container input[type="submit"]:active {
+    border: 1px solid black ;}
+
+.login-container h4{
+    margin-top: 30px;
+}
+/* .article:hover {
+    background-color: #f0f0f0;
+}
+
+.article:hover .article-title {
+    color: #007bff; /* Change text color on hover */
+
+
+    .main-section {
+        position: relative;
+         /* Set position to relative for proper positioning of children */
+    }
+
+    /* Position and style the particles */
+    #particles-js {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+    }
+
+
+
+
+
+
+
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        /* background-color: #f4f4f4; */
+    }
+
+    
+
+ .container {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        width: 100vw;
+        background:none;
+        box-shadow: 0 2px 5px -2px blue;
+        height: 60px;
+        /* position: relative; */
+        position: fixed;
+    top: 0;
+    background-color: rgba(255, 255, 255, 0.8); /* Add a background color with opacity */
+    backdrop-filter: blur(2.5px); /* Apply a blur effect */
+    z-index: 100; /* Ensure the navbar stays on top of other content */
+    transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
+        
+    }
+
+
+    nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+    }
+
+    nav ul li {
+        margin-right: 20px;
+    }
+
+    nav ul li a {
+        text-decoration: none;
+        color: white;
+    }
+
+    .main-section {
+        position: relative;
+        /* background-color: #fff; */
+        padding: 20px;
+        /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+        border-radius: 5px;
+        /* width: 50%; */
+    }
+
+    #particles-js {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+
+
+    .article {
+        /* text-align: center; */
+        /* border: 1px solid red; */
+        margin-right: 40px;
+        background: none;
+    }
+
+    .article h2 {
+        color: #333;
+        font-size: 36px;
+        margin-top: 0;
+    }
+
+    .article p {
+        color: #555;
+        font-size: 18px;
+    }
+
+    .typewrite {
+        color: #333;
+        font-size: 20px;
+    }
+
+
+
+
+
+    /* new navbar */
+    .dropbtn{
+        color: blue;
+        font-family: 'Roboto Slab', serif;
+        font-size: 17px;
+    }
+
+    /* Style the dropdown button */
+.dropdown .dropbtn {
+    padding: 12px 16px;
+    font-size: larger;
+    border: none;
+    cursor: pointer;
+}
+
+/* Dropdown container */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 5  ;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Style the navigation items */
+.navitems ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navitems ul li {
+    display: inline;
+    margin-right: 20px;
+}
+.navitems ul li a{
+    text-decoration: none;
+    font-family: 'Roboto Slab', serif;
+}/* Style the button */
+
+
+/* Style the logo */
+/* .logo {
+    font-size: 24px;
+} */
+
+/* Container */
+/* 
+ {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* padding: 20px 0; */
+    /* width: 100vw;
+    height: 60px; */
+
+ */
+
+
+ /* css for login section  */
+
+
+.login-section {
+    /* position: relative; */
+    background :none;
+    padding: 20px;
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+    border-radius: 5px;
+    text-align: center;
+    height: 80vh;
+}
+
+#particles-js {
+    position: absolute;
+    top: 0;
+    left: 0;
+    
+    /* pointer-events: none; */
+}
+
+
+.login-logo img {
+    /* max-width: 100%; */
+    height: auto;
+    width: 500px;
+    margin-top: 60px;
+}
+
+.login-container {
+    text-align: center;
+    background-color : none;
+    box-shadow: inset;
+    margin-top: 50px;
+    padding: 40px 50px;
+}
+
+.login-container h2 {
+    color: #333;
+    font-size: 36px;
+    margin-top: 0;
+}
+
+.login-container input[type="text"],
+.login-container input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.login-container input[type="submit"] {
+    background-color:#333;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.login-container h4 {
+    color: #333;
+    font-size: 18px;
+}
+
+.login-container h4 a {
+    color: blue;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+
+/* Css for index sections  */
+ 
+.features{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    position: relative;
+    margin-top: 10px;
+    z-index: 12;
+    /* border: 1px solid rebeccapurple; */
+}
+#particles-js-features{
+    position: absolute ;
+    top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+}
+.features-points h2{
+    color: blue;
+    padding: 20px;
+    font-size: 35px;
+    
+}
+.features-points{
+    width: 70%;
+    padding: 10px;
+    font-size: 20px;
+    font-family: 'Roboto Slab', serif;
+    color: #1B2358;
+    /* margin-left: 20px; */
+    margin-right: 20px;
+    list-style: none;
+    
+
+}
+.features-logo{
+    width: 30%;
+    flex: 0 0 auto;
+    margin-left: 70px;
+}
+.features-logo img{
+    width: 300px;
+    animation: slideUpDown 2s ease-in-out infinite alternate;
+}
+
+@keyframes slideUpDown {
+    0%{
+        transform: translateY(0);
+    }
+    100%{
+        transform: translateY(-12px);
+    }
+}
+
+
+
+
+
+.Technologies{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row-reverse;
+    padding: 20px;
+    width: 100vw;
+ position: relative;
+}
+#particles-js-technology{
+    position: absolute ;
+    top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+}
+.Tech-points h2{
+    color: blue;
+    padding: 20px;
+    font-size: 35px;
+    
+}
+.Tech-points{
+    width: 70%;
+    /* border: 1px solid red; */
+    padding: 30px;
+    font-size: 20px;
+    font-family: 'Roboto Slab', serif;
+    color: #1B2358;
+    margin-left: 20px;
+
+}
+.Tech-logo{
+    width: 30%;
+    flex: 0 0 auto;
+    margin-left: 70px;
+}
+.Tech-logo img{
+    width: 300px;
+    animation: slideUpDown 2s ease-in-out infinite alternate;
+}
+
+@keyframes slideUpDown {
+    0%{
+        transform: translateY(0);
+    }
+    100%{
+        transform: translateY(-12px);
+    }
+}
+
+
+.Applications{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    width: 100vw;
+    position: relative;
+ 
+}
+#particles-js-application{
+    position: absolute ;
+    top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+}
+.App-points h2{
+    color: blue;
+    padding: 20px;
+    font-size: 35px;
+    
+}
+.App-points{
+    width: 70%;
+    /* border: 1px solid red; */
+    padding: 30px;
+    font-size: 20px;
+    font-family: 'Roboto Slab', serif;
+    color: #1B2358;
+    margin-left: 20px;
+
+}
+.features-logo{
+    width: 30%;
+    flex: 0 0 auto;
+    margin-left: 70px;
+}
+.features-logo img{
+    width: 300px;
+    animation: slideUpDown 2s ease-in-out infinite alternate;
+}
+
+@keyframes slideUpDown {
+    0%{
+        transform: translateY(0);
+    }
+    100%{
+        transform: translateY(-12px);
+    }
+}
+
+.footer{
+    text-align: center;
+    padding: 20px 10px ;
+}
+.footer > p{
+    color: black;
+}
